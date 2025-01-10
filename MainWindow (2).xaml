@@ -1,0 +1,32 @@
+﻿<Window x:Class="UnifiedApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stepper Motor Control with Full Movement" Height="400" Width="500"
+        KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+
+    <Grid>
+        <Label Content="Speed:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Slider x:Name="SpeedSlider" Minimum="60" Maximum="540" Value="180" 
+                TickFrequency="5" SmallChange="5" LargeChange="10"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" Width="360"
+                ValueChanged="SpeedSlider_ValueChanged"/>
+
+        <TextBox x:Name="SpeedTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Margin="10,70,0,0" Width="100" Text="180" 
+                 TextChanged="SpeedTextBox_TextChanged"/>
+
+        <Button x:Name="SetSpeedButton" Content="Set Speed" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="120,70,0,0" Width="100" Click="SetSpeedButton_Click"/>
+
+        <Button x:Name="AddDetailButton" Content="Добавить деталь" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="10,100,0,0" Width="150" Click="AddDetailButton_Click"/>
+
+        <Canvas Name="CanvasArea" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,120,10,10">
+            <Rectangle Width="480" Height="200" Fill="Black"/>
+            <Rectangle x:Name="Mover" Width="50" Height="50" Fill="Purple" 
+                       Canvas.Left="10" Canvas.Top="10"/>
+        </Canvas>
+    </Grid>
+</Window>
